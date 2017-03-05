@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
 </head>
     <title>Snake</title>
 <body>
-    <h1>This is snake</h1>
+    <div class="col-md-3 col-md-offset-3">
+        <h1>This is snake</h1>
+        <br/>
+        <br/>
+        <p id="clock"></p>
+        <script>
+            function myTimefunction() {
+                var date = new Date();
+                var t = date.getHours() + ":" + date.getMinutes();
+                var ampm = date.getHours() < 12 ? "am" : "pm";
+                document.getElementById("clock").innerHTML = t + ampm;
+            }
+        </script>
+        <button onclick="myTimefunction()">Test</button>
+    </div>
 </body>
 </html>
