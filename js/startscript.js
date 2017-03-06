@@ -8,11 +8,20 @@ function dateFormat(date) {
     var today = days[date.getDay()];
     var thisDate = date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear();
     var ampm = date.getHours() < 12 ? "am" : "pm";
-    var t = date.getHours() + ":" + date.getMinutes() + ampm;
+    var h; 
+    if(date.getHours() < 12) {
+        if (date.getHours() === 0) {
+            h = 12;
+        } else {
+            h = date.getHours();
+        }
+    } else {
+        h = date.getHours() - 12;
+    }
+    var t = h + ":" + date.getMinutes() + ampm;
 
     var o = t + " " + today + " " + thisDate;
     document.getElementById("clock").textContent = o;
-    //greeting(date);
 };
 
 function greeting() {
